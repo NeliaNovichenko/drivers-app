@@ -1,0 +1,59 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35327.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Drivers.Api", "src\Drivers.Api\Drivers.Api.csproj", "{374EB992-8737-42A0-807D-46AED291324B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B5AE9B57-E55F-424E-A5C4-B95C5F8ACECB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{0BDFFD2B-65F3-4E66-B4AE-202C4AA971F6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Drivers.Domain", "src\Drivers.Domain\Drivers.Domain.csproj", "{66566F26-989C-4D8B-9DA3-5F7044708B9D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Drivers.Db", "src\Drivers.Db\Drivers.Db.csproj", "{4DEC969C-21E9-428C-A176-820BC816E0FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Drivers.Tests", "tests\Drivers.Tests\Drivers.Tests.csproj", "{430220F1-DF76-4C41-B315-A55E69360A93}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E84E91C9-3747-4304-8BED-72FFFBAF6D91}"
+	ProjectSection(SolutionItems) = preProject
+		AzureFunctions-Testcontainers.Dockerfile = AzureFunctions-Testcontainers.Dockerfile
+		Directory.Packages.props = Directory.Packages.props
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{374EB992-8737-42A0-807D-46AED291324B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{374EB992-8737-42A0-807D-46AED291324B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{374EB992-8737-42A0-807D-46AED291324B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{374EB992-8737-42A0-807D-46AED291324B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66566F26-989C-4D8B-9DA3-5F7044708B9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66566F26-989C-4D8B-9DA3-5F7044708B9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66566F26-989C-4D8B-9DA3-5F7044708B9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66566F26-989C-4D8B-9DA3-5F7044708B9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DEC969C-21E9-428C-A176-820BC816E0FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DEC969C-21E9-428C-A176-820BC816E0FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DEC969C-21E9-428C-A176-820BC816E0FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DEC969C-21E9-428C-A176-820BC816E0FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{430220F1-DF76-4C41-B315-A55E69360A93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{430220F1-DF76-4C41-B315-A55E69360A93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{430220F1-DF76-4C41-B315-A55E69360A93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{430220F1-DF76-4C41-B315-A55E69360A93}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{374EB992-8737-42A0-807D-46AED291324B} = {B5AE9B57-E55F-424E-A5C4-B95C5F8ACECB}
+		{66566F26-989C-4D8B-9DA3-5F7044708B9D} = {B5AE9B57-E55F-424E-A5C4-B95C5F8ACECB}
+		{4DEC969C-21E9-428C-A176-820BC816E0FC} = {B5AE9B57-E55F-424E-A5C4-B95C5F8ACECB}
+		{430220F1-DF76-4C41-B315-A55E69360A93} = {0BDFFD2B-65F3-4E66-B4AE-202C4AA971F6}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AA22E785-64D5-4CB5-865D-49ED4D3796C8}
+	EndGlobalSection
+EndGlobal

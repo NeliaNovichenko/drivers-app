@@ -1,0 +1,71 @@
+trigger:
+  branches:
+    include:
+      - main  # Set to your main branch name
+
+variables:
+  buildConfiguration: 'Release'
+  azureSubscription: 'drivers-assignment'  # Azure DevOps service connection name
+  functionAppName: 'DriversApi20241130181234'    # Azure Function App Name
+  packagePath: '$(System.DefaultWorkingDirectory)/artifacts'
+
+pool:
+  vmImage: 'windows-latest'
+
+stages:
+- stage: Build
+  displayName: "Build Stage"
+  jobs:
+  - job: Build
+    displayName: "Build Azure Function"
+    steps:
+    - task: UseDotNet@2
+      displayName: "Install .NET Core SDK"
+      inputs:
+        packageType: 'sdk'
+        version: '7.x'  # Set the version compatible with your Azure Function
+
+    - task: DotNetCoreCLI@2
+      displayName: "Restore Dependencies"
+      inputs:
+        command: restore
+        projects: '**/*.csproj'
+
+    - task: DotNetCoreCLI@2
+      displayName: "Build Azure Function"
+      inputs:
+        command: build
+        projects: '**/*.csproj'
+        arguments: '--configuration $(buildConfiguration)'
+
+    - task: DotNetCoreCLI@2
+      displayName: "Publish Azure Function"
+      inputs:
+        command: publish
+        projects: '**/*.csproj'
+        arguments: '--configuration $(buildConfiguration) --output $(packagePath)'
+
+    - task: PublishBuildArtifacts@1
+      displayName: "Publish Artifacts"
+      inputs:
+        pathToPublish: '$(packagePath)'
+        artifactName: 'artifacts'
+
+- stage: Deploy
+  displayName: "Deploy Stage"
+  dependsOn: Build
+  jobs:
+  - deployment: DeployFunction
+    displayName: "Deploy Azure Function"
+    environment: 'Production'
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+          - task: AzureFunctionApp@1
+            displayName: "Deploy to Azure Function App"
+            inputs:
+              azureSubscription: '$(azureSubscription)'
+              appType: 'functionApp'
+              appName: '$(functionAppName)'
+              package: '$(packagePath)'
