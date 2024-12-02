@@ -42,7 +42,7 @@ stages:
       displayName: "Publish Azure Function"
       inputs:
         command: publish
-        projects: '**/*.csproj'
+        projects: '**/*.Api.csproj'
         arguments: '--configuration $(buildConfiguration) --output $(packagePath)'
 
     - task: PublishBuildArtifacts@1
