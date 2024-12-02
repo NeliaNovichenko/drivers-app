@@ -6,6 +6,7 @@ using Drivers.Db;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.EntityFrameworkCore;
 using Testcontainers.PostgreSql;
+using Xunit;
 
 namespace Drivers.UnitTests;
 

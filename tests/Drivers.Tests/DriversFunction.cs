@@ -2,6 +2,7 @@ using AutoBogus;
 using Drivers.Domain.Models;
 using FluentAssertions;
 using Newtonsoft.Json;
+using Xunit;
 
 namespace Drivers.UnitTests;
 
